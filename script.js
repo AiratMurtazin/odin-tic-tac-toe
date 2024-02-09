@@ -13,7 +13,6 @@ allCells.forEach(c => {
 	c.addEventListener('click', () => {
 		if (!gameover) {
 			makeMove(c)
-			enemyMove()
 		}
 	})
 })
@@ -32,8 +31,13 @@ function enemyMove() {
 }
 
 function makeMove(c) {
-	c.textContent = 'X'
-	lookForWin()
+	if (c.textContent === '') {
+		c.textContent = 'X'
+		lookForWin()
+		enemyMove()
+	} else {
+		alert('try another one')
+	}
 }
 
 function lookForWin() {
