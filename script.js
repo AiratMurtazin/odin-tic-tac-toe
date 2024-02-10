@@ -9,6 +9,7 @@ let winArr = ['', '', '', '', '', '', '', '', '']
 let firstWin = 'X,X,X'
 let secondtWin = '0,0,0'
 let gameover = false
+
 allCells.forEach(c => {
 	c.addEventListener('click', () => {
 		if (!gameover) {
@@ -100,5 +101,6 @@ restartBtn.addEventListener('click', () => {
 	allCells.forEach(c => {
 		c.textContent = ''
 		stat.textContent = ''
+		gameover = false
 	})
 })
